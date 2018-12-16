@@ -1,0 +1,7 @@
+main_page:
+    path: /{_locale}
+    controller: App\Controller\DefaultController::index
+    defaults:
+        _locale: ru
+    requirements:
+        _locale: '%app.locales%'
