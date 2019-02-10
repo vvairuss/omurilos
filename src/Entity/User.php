@@ -39,4 +39,9 @@ class User extends BaseUser
 
         return array_unique($roles);
     }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }
