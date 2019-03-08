@@ -28,6 +28,8 @@ class CategoriesType extends AbstractType
                 'html5' => false
             ])
             ->add('deleted')
+            ->add('topMenu')
+            ->add('siteMap')
             ->add('startTime')
             ->add('endTime')
         ;

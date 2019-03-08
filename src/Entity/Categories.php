@@ -21,6 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
  *     @ORM\Index(name="cat_active_deleted_start_end_time", columns={"deleted", "created", "start_time", "end_time"})
  * })
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Categories
 {
@@ -111,16 +112,16 @@ class Categories
     private $created;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetime", nullable=true)
+     * @ORM\Column(name="updated", type="datetime", nullable=false)
      */
     private $updated;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTime
      *
-     * @ORM\Column(name="start_time", type="datetime", nullable=true)
+     * @ORM\Column(name="start_time", type="datetime", nullable=false)
      */
     private $startTime;
 
@@ -287,12 +288,24 @@ class Categories
         return $this->updated;
     }
 
-    public function setUpdated(?\DateTimeInterface $updated): self
+    public function setUpdated(\DateTimeInterface $updated): self
     {
         $this->updated = $updated;
 
         return $this;
     }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateModifiedDatetime(): void
+    {
+        $this->setCreated($this->created ?? new \DateTime());
+        $this->setUpdated(new \DateTime());
+
+    }
+
 
     public function getStartTime(): ?\DateTimeInterface
     {

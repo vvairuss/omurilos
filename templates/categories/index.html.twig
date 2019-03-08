@@ -12,13 +12,11 @@
                 <th>ParentId</th>
                 <th>Name</th>
                 <th>Url</th>
-                <th>FullUrl</th>
                 <th>Title</th>
-                <th>Description</th>
-                <th>Meta</th>
-                <th>Keywords</th>
                 <th>Active</th>
                 <th>Deleted</th>
+                <th>topMenu</th>
+                <th>siteMap</th>
                 <th>Created</th>
                 <th>Updated</th>
                 <th>StartTime</th>
@@ -33,13 +31,11 @@
                 <td>{{ category.parentId }}</td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.url }}</td>
-                <td>{{ category.fullUrl }}</td>
                 <td>{{ category.title }}</td>
-                <td>{{ category.description }}</td>
-                <td>{{ category.meta }}</td>
-                <td>{{ category.keywords }}</td>
                 <td>{{ category.active }}</td>
                 <td>{{ category.deleted }}</td>
+                <td>{{ category.topMenu }}</td>
+                <td>{{ category.siteMap }}</td>
                 <td>{{ category.created ? category.created|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ category.updated ? category.updated|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ category.startTime ? category.startTime|date('Y-m-d H:i:s') : '' }}</td>

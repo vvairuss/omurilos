@@ -5,3 +5,7 @@ main_page:
         _locale: ru
     requirements:
         _locale: '%app.locales%'
+
+admin_categories:
+    resource: App\Controller\CategoriesController
+    prefix: /admin/categories
