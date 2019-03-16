@@ -20,7 +20,7 @@ class PostsController extends AbstractController
             ->getRepository(Posts::class)
             ->findAll();
 
-        return $this->render('posts/index.html.twig', [
+        return $this->render('Admin/posts/index.html.twig', [
             'posts' => $posts,
         ]);
     }
@@ -42,7 +42,7 @@ class PostsController extends AbstractController
             return $this->redirectToRoute('posts_index');
         }
 
-        return $this->render('posts/new.html.twig', [
+        return $this->render('Admin/posts/new.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class PostsController extends AbstractController
      */
     public function show(Posts $post): Response
     {
-        return $this->render('posts/show.html.twig', [
+        return $this->render('Admin/posts/show.html.twig', [
             'post' => $post,
         ]);
     }
@@ -74,7 +74,7 @@ class PostsController extends AbstractController
             ]);
         }
 
-        return $this->render('posts/edit.html.twig', [
+        return $this->render('Admin/posts/edit.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
         ]);

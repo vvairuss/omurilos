@@ -22,7 +22,7 @@ class CategoriesController extends AbstractController
             ->getRepository(Categories::class)
             ->findAll();
 
-        return $this->render('categories/index.html.twig', [
+        return $this->render('Admin/categories/index.html.twig', [
             'categories' => $categories,
             'number' => $number,
         ]);
@@ -56,7 +56,7 @@ class CategoriesController extends AbstractController
      */
     public function show(Categories $category): Response
     {
-        return $this->render('categories/show.html.twig', [
+        return $this->render('Admin/categories/show.html.twig', [
             'category' => $category,
         ]);
     }
@@ -77,7 +77,7 @@ class CategoriesController extends AbstractController
             ]);
         }
 
-        return $this->render('categories/edit.html.twig', [
+        return $this->render('Admin/categories/edit.html.twig', [
             'category' => $category,
             'form' => $form->createView(),
         ]);
