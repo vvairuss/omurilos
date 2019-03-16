@@ -7,9 +7,9 @@ main_page:
         _locale: '%app.locales%'
 
 admin_categories:
-    resource: App\Controller\CategoriesController
+    resource: App\Controller\Admin\CategoriesController
     prefix: /admin/categories
 
 admin_posts:
-    resource: App\Controller\PostsController
+    resource: App\Controller\Admin\PostsController
     prefix: /admin/posts
